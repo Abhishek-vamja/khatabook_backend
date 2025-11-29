@@ -22,4 +22,5 @@ urlpatterns = [
     
     # Include user app URLs
     path('api/user/', include('apps.user.urls')),
+    path('api/transacction/', include('apps.transacction.urls')),
 ]
