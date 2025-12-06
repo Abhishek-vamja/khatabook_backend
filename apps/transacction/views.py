@@ -9,7 +9,7 @@ from apps.core.viewsets import BaseModelViewSet
 
 class TransactionViewSet(BaseModelViewSet):
     """ViewSet for managing financial transactions."""
-    http_method_names = ["get", "post"]
+    http_method_names = ["get", "post", "delete"]
     serializer_class = TransactionSerializer
     
     def get_queryset(self):
