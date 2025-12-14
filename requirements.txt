@@ -1,7 +1,7 @@
 # Project requirements
-Django==5.2.8
-djangorestframework==3.16.1
-djangorestframework_simplejwt==5.5.1
+Django
+djangorestframework
+djangorestframework_simplejwt
 
 # Image handling library
-pillow==12.0.0
+pillow
