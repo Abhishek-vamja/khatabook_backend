@@ -2,11 +2,7 @@
 
 echo "=== DEPLOY STARTED ==="
 
-cd /home/ec2-user/khatabook_backend || exit 1
-
-#!/bin/bash
-echo "PIPELINE HIT EC2 AT $(date)" >> /tmp/pipeline-hit.txt
-exit 0
+cd /home/ec2-user/khatabook_backend
 
 echo "Activate virtualenv"
 source venv/bin/activate
