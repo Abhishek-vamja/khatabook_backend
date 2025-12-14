@@ -7,6 +7,4 @@ pkill gunicorn || true
 python manage.py migrate
 python manage.py collectstatic --noinput
 
-gunicorn core.wsgi:application \
-  --bind 127.0.0.1:8000 \
-  --daemon
+gunicorn khatabook_backend.wsgi:application   --bind 127.0.0.1:8000   --daemon
