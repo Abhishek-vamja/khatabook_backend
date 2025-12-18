@@ -2,6 +2,7 @@
 set -e
 
 cd /home/ec2-user/khatabook_backend
+
 source venv/bin/activate
 
 pkill gunicorn || true
