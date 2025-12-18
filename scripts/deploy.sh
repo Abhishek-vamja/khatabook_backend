@@ -1,16 +1,14 @@
 #!/bin/bash
 set -e
+set -x
 
-cd /home/ec2-user/khatabook_backend
+APP_DIR=/home/ec2-user/khatabook_backend
 
+cd $APP_DIR
 source venv/bin/activate
 
-pkill gunicorn || true
+pkill -f gunicorn || true
 
-python manage.py migrate --noinput
-python manage.py collectstatic --noinput
-
-gunicorn khatabook_backend.wsgi:application \
-  --bind 127.0.0.1:8000 \
-  --workers 3 \
+venv/bin/gunicorn khatabook_backend.wsgi:application \
+  --bind 0.0.0.0:8000 \
   --daemon
