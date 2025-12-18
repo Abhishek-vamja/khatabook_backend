@@ -1,28 +1,15 @@
 #!/bin/bash
-
-echo "=== DEPLOY STARTED ==="
+set -e
 
 cd /home/ec2-user/khatabook_backend
-
-echo "Activate virtualenv"
 source venv/bin/activate
 
-echo "Stop gunicorn"
 pkill gunicorn || true
 
-echo "Install dependencies"
-pip install -r requirements.txt
+python manage.py migrate --noinput
+python manage.py collectstatic --noinput
 
-echo "Run migrations"
-python manage.py migrate || true
-
-echo "Collect static"
-python manage.py collectstatic --noinput || true
-
-echo "Start gunicorn"
 gunicorn khatabook_backend.wsgi:application \
   --bind 127.0.0.1:8000 \
+  --workers 3 \
   --daemon
-
-echo "=== DEPLOY FINISHED SUCCESSFULLY ==="
-exit 0
