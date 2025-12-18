@@ -5,3 +5,4 @@ djangorestframework_simplejwt
 
 # Image handling library
 pillow
+gunicorn
