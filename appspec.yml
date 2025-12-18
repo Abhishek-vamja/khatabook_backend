@@ -2,11 +2,6 @@ version: 0.0
 os: linux
 
 hooks:
-  BeforeInstall:
-    - location: scripts/clean.sh
-      timeout: 300
-      runas: ec2-user
-
   AfterInstall:
     - location: scripts/install.sh
       timeout: 300
