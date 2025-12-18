@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
     "abhishek2563.pythonanywhere.com", 
     "localhost",
     "13.233.104.114",
+    "3.110.176.194",
 ]
 
 
