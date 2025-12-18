@@ -1,6 +1,11 @@
 version: 0.0
 os: linux
 
+files:
+  - source: khatabook_backend
+    destination: /home/ec2-user/khatabook_backend
+    overwrite: yes
+
 hooks:
   AfterInstall:
     - location: scripts/install.sh
