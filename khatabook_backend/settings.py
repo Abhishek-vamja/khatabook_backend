@@ -31,8 +31,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "abhishek2563.pythonanywhere.com", 
     "localhost",
-    "http://3.110.176.194",
     "http://15.207.14.51",
+    "15.207.14.51"
 ]
 
 
