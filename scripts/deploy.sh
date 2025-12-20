@@ -2,9 +2,15 @@
 set -e
 
 cd /home/ec2-user/khatabook_backend
+
 source venv/bin/activate
+
+pkill gunicorn || true
 
 python manage.py migrate --noinput
 python manage.py collectstatic --noinput
 
-systemctl restart gunicorn
+gunicorn khatabook_backend.wsgi:application \
+  --bind 127.0.0.1:8000 \
+  --workers 3 \
+  --daemon
