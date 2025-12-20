@@ -2,11 +2,16 @@ version: 0.0
 os: linux
 
 files:
-  - source: khatabook_backend
+  - source: /
     destination: /home/ec2-user/khatabook_backend
     overwrite: yes
 
 hooks:
+  BeforeInstall:
+    - location: scripts/clean.sh
+      timeout: 300
+      runas: ec2-user
+
   AfterInstall:
     - location: scripts/install.sh
       timeout: 300
